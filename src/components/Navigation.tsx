@@ -39,9 +39,6 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="font-semibold" asChild>
-              <a href="/get-involved">Get Involved</a>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,9 +69,6 @@ const Navigation = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="w-full font-semibold" asChild>
-                <a href="/get-involved">Get Involved</a>
-              </Button>
             </div>
           </div>
         )}
