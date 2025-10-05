@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { getFormattedStats } from "@/data/impactStats";
 
 const ImpactsStoriesPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,6 +16,8 @@ const ImpactsStoriesPage = () => {
     email: "",
     story: "",
   });
+
+  const impactStats = getFormattedStats();
 
   const handleStorySubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,12 +28,6 @@ const ImpactsStoriesPage = () => {
     setStoryForm({ name: "", email: "", story: "" });
   };
 
-  const impactStats = [
-    { value: "500+", label: "Water recipients" },
-    { value: "200+", label: "Scholarships" },
-    { value: "100+", label: "Youths Trained" },
-    { value: "50+", label: "Families" },
-  ];
 
   const stories = [
     { name: "Ademola Joshua", role: "Recipient", isNew: true },

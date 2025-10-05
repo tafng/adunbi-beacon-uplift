@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { number: 500, label: "Lives Impacted", suffix: "+" },
-  { number: 200, label: "Scholarships", suffix: "+" },
-  { number: 100, label: "Youths Skilled", suffix: "+" },
-  { number: 50, label: "Families", suffix: "+" },
-];
+import { impactStats } from "@/data/impactStats";
 
 const ImpactStats = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +26,7 @@ const ImpactStats = () => {
     <section ref={sectionRef} className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
+          {impactStats.map((stat, index) => (
             <div
               key={index}
               className="text-center animate-fade-in-up"
