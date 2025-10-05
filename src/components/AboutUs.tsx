@@ -20,11 +20,22 @@ const AboutUs = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
               Our Mission
             </h3>
-            <p className="text-lg leading-relaxed opacity-90">
+            <p className="text-lg leading-relaxed opacity-90 mb-8">
               To empower underserved communities through accessible education, skill development, 
               and sustainable opportunities that create lasting positive change for individuals, 
               families, and entire communities.
             </p>
+            <div className="aspect-video w-full max-w-3xl mx-auto rounded-lg overflow-hidden">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/Q5HBOhApKB4"
+                title="The Adunbi Foundation Mission Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
           </div>
 
           <Button 
