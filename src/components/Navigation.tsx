@@ -7,7 +7,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "About", href: "/#about" },
+    { name: "About", href: "/about" },
     { name: "Programs", href: "/programs" },
     { name: "Impacts & Stories", href: "/impacts-stories" },
   ];

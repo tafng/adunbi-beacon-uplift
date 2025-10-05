@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import ProgramsPage from "./pages/ProgramsPage";
 import GetInvolvedPage from "./pages/GetInvolvedPage";
 import ImpactsStoriesPage from "./pages/ImpactsStoriesPage";
+import AboutUsPage from "./pages/AboutUsPage";
 import DonationSuccessPage from "./pages/DonationSuccessPage";
 import NotFound from "./pages/NotFound";
 
@@ -20,6 +21,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<AboutUsPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
           <Route path="/impacts-stories" element={<ImpactsStoriesPage />} />
           <Route path="/get-involved" element={<GetInvolvedPage />} />
