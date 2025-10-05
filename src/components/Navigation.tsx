@@ -11,7 +11,7 @@ const Navigation = () => {
     { name: "About", href: "/#about" },
     { name: "Programs", href: "/programs" },
     { name: "Events", href: "/#events" },
-    { name: "Get Involved", href: "/#get-involved" },
+    { name: "Get Involved", href: "/get-involved" },
   ];
 
   return (
@@ -38,7 +38,9 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="font-semibold">Donate Now</Button>
+            <Button className="font-semibold" asChild>
+              <a href="/get-involved">Get Involved</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,7 +71,9 @@ const Navigation = () => {
                   {link.name}
                 </a>
               ))}
-              <Button className="w-full font-semibold">Donate Now</Button>
+              <Button className="w-full font-semibold" asChild>
+                <a href="/get-involved">Get Involved</a>
+              </Button>
             </div>
           </div>
         )}
