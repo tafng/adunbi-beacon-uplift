@@ -53,12 +53,12 @@ const Programs = () => {
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-white pr-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-white pr-4 drop-shadow-lg">
                     {program.title}
                   </h3>
-                  <ArrowRight className="w-6 h-6 text-white flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                  <ArrowRight className="w-6 h-6 text-white flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1 drop-shadow-lg" />
                 </div>
               </div>
             </Card>
