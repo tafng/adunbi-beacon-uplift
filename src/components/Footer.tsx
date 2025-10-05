@@ -1,3 +1,4 @@
+import logo from "@/assets/logo-footer.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
@@ -106,18 +107,11 @@ const Footer = () => {
 
           {/* Logo Column */}
           <div className="flex justify-end">
-            <div className="text-right">
-              <div className="flex items-center gap-3 justify-end">
-                <div className="w-16 h-16 bg-primary rounded-sm flex items-center justify-center">
-                  <span className="text-charcoal font-bold text-xl">TAF</span>
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-xl">ADUNBI</h3>
-                  <p className="text-white/60 text-xs">FOUNDATION</p>
-                  <p className="text-primary text-xs italic">Transforming lives</p>
-                </div>
-              </div>
-            </div>
+            <img 
+              src={logo} 
+              alt="The Adunbi Foundation" 
+              className="h-16"
+            />
           </div>
         </div>
 
