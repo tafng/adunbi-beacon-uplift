@@ -7,10 +7,9 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "About", href: "/#about" },
     { name: "Programs", href: "/programs" },
-    { name: "Events", href: "/#events" },
+    { name: "Impacts & Stories", href: "/#events" },
     { name: "Get Involved", href: "/get-involved" },
   ];
 
@@ -20,11 +19,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src={logo} 
-              alt="The Adunbi Foundation" 
-              className="h-12"
-            />
+            <a href="/">
+              <img 
+                src={logo} 
+                alt="The Adunbi Foundation" 
+                className="h-12 cursor-pointer"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
