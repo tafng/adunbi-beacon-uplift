@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 const Hero = () => {
   const [formData, setFormData] = useState({
     giftType: "",
+    program: "",
     amount: "",
     firstName: "",
     lastName: "",
@@ -77,6 +78,26 @@ const Hero = () => {
                       <SelectItem value="one-time">One-Time Gift</SelectItem>
                       <SelectItem value="monthly">Monthly Donation</SelectItem>
                       <SelectItem value="yearly">Yearly Donation</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="program">Select Program</Label>
+                  <Select
+                    value={formData.program}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, program: value })
+                    }
+                  >
+                    <SelectTrigger id="program">
+                      <SelectValue placeholder="Choose a program" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="wep">Women Empowerment Program (WEP)</SelectItem>
+                      <SelectItem value="ymep">Youth Mentoring Empowerment Program (YMEP)</SelectItem>
+                      <SelectItem value="cmp">Couples Marriage Program (CMP)</SelectItem>
+                      <SelectItem value="asp">Academic Support Program (ASP)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
