@@ -41,8 +41,9 @@ const ProgramsPage = () => {
       <section className="relative h-[300px] flex items-center justify-center bg-charcoal">
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 to-charcoal/70" />
         <div className="relative z-10 text-center px-4 w-full">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 text-center">
-            PROGRAMS & EVENTS
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+            <span className="text-white">PROGRAMS & </span>
+            <span className="text-primary">EVENTS</span>
           </h1>
           <p className="text-lg text-white/90 text-center">
             Empowering lives, building stronger communities.
