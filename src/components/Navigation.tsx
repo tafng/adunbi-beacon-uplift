@@ -39,6 +39,9 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
+            <Button className="bg-primary hover:bg-primary/90 text-charcoal font-semibold" asChild>
+              <a href="/get-involved">Get Involved</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -69,6 +72,9 @@ const Navigation = () => {
                   {link.name}
                 </a>
               ))}
+              <Button className="w-full bg-primary hover:bg-primary/90 text-charcoal font-semibold" asChild>
+                <a href="/get-involved">Get Involved</a>
+              </Button>
             </div>
           </div>
         )}
