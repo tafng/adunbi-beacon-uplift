@@ -143,22 +143,6 @@ const GetInvolvedPage = () => {
                       </select>
                     </div>
 
-                    {/* Payment Options */}
-                    <div className="space-y-2">
-                      <Label>Payment Options</Label>
-                      <div className="space-y-2">
-                        <Button type="button" variant="outline" className="w-full justify-start">
-                          Payment - VISA | MASTERCARD | AMERICAN EXPRESS
-                        </Button>
-                        <Button type="button" variant="outline" className="w-full justify-start">
-                          Card/Debit card - VISA | MASTERCARD | AMERICAN EXPRESS
-                        </Button>
-                        <Button type="button" variant="outline" className="w-full justify-start">
-                          Bank Transfer
-                        </Button>
-                      </div>
-                    </div>
-
                     <p className="text-xs text-muted-foreground">
                       A Secure payment. 100% of your donation goes directly into TAF programs.
                     </p>
