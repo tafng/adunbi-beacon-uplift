@@ -10,7 +10,6 @@ const Navigation = () => {
     { name: "About", href: "/#about" },
     { name: "Programs", href: "/programs" },
     { name: "Impacts & Stories", href: "/impacts-stories" },
-    { name: "Get Involved", href: "/get-involved" },
   ];
 
   return (
