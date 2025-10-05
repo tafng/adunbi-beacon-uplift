@@ -1,4 +1,5 @@
 import logo from "@/assets/logo-footer.png";
+import poweredBy from "@/assets/powered-by.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
@@ -188,9 +189,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p className="text-white/60">© 2025 — All rights reserved</p>
-          <p className="text-white/60">
-            Powered by <span className="text-white">eckplus</span>
-          </p>
+          <img 
+            src={poweredBy} 
+            alt="Powered by" 
+            className="h-5"
+          />
         </div>
       </div>
     </footer>
