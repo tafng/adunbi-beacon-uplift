@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 
@@ -17,138 +17,186 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-charcoal text-background">
-      {/* Newsletter Section */}
-      <div className="border-b border-primary/30">
-        <div className="container mx-auto px-4 py-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Stay Connected</h3>
-            <p className="text-lg opacity-90 mb-6">
-              Subscribe to our newsletter for inspiring stories and updates
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-background/10 border-primary/30 text-background placeholder:text-background/60"
-                required
-              />
-              <Button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold whitespace-nowrap">
-                Subscribe
-              </Button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
-          {/* About Column */}
+    <footer className="bg-black text-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid md:grid-cols-5 gap-12 mb-12">
+          {/* INFO Column */}
           <div>
-            <h4 className="text-xl font-bold mb-4 text-primary">The Adunbi Foundation</h4>
-            <p className="opacity-90 leading-relaxed">
-              Empowering lives and building futures through education, empowerment, and community development.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-bold mb-4 text-primary">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="text-primary text-sm font-semibold mb-6 uppercase tracking-wider">
+              Info
+            </h4>
+            <ul className="space-y-3">
               <li>
-                <a href="#about" className="opacity-90 hover:text-primary transition-colors">
-                  About Us
+                <a href="#programs" className="text-white/80 hover:text-primary transition-colors">
+                  Programs
                 </a>
               </li>
               <li>
-                <a href="#programs" className="opacity-90 hover:text-primary transition-colors">
-                  Our Programs
-                </a>
-              </li>
-              <li>
-                <a href="#events" className="opacity-90 hover:text-primary transition-colors">
+                <a href="#events" className="text-white/80 hover:text-primary transition-colors">
                   Events
                 </a>
               </li>
               <li>
-                <a href="#get-involved" className="opacity-90 hover:text-primary transition-colors">
-                  Get Involved
+                <a href="#about" className="text-white/80 hover:text-primary transition-colors">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="text-white/80 hover:text-primary transition-colors">
+                  Gallery
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Programs */}
+          {/* GET INVOLVED Column */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-primary">Our Programs</h4>
-            <ul className="space-y-2">
-              <li className="opacity-90">Scholarship Program</li>
-              <li className="opacity-90">Skills Development</li>
-              <li className="opacity-90">Community Outreach</li>
-              <li className="opacity-90">Youth Empowerment</li>
+            <h4 className="text-primary text-sm font-semibold mb-6 uppercase tracking-wider">
+              Get Involved
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#donate" className="text-white/80 hover:text-primary transition-colors">
+                  Donate
+                </a>
+              </li>
+              <li>
+                <a href="#volunteer" className="text-white/80 hover:text-primary transition-colors">
+                  Volunteer
+                </a>
+              </li>
+              <li>
+                <a href="#partner" className="text-white/80 hover:text-primary transition-colors">
+                  Partner with us
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* PROGRAMS Column */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-primary">Contact Us</h4>
+            <h4 className="text-primary text-sm font-semibold mb-6 uppercase tracking-wider">
+              Programs
+            </h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 opacity-90">
-                <Mail className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
-                <span>info@adunbifoundation.org</span>
+              <li>
+                <a href="#impact" className="text-white/80 hover:text-primary transition-colors">
+                  Impact
+                </a>
               </li>
-              <li className="flex items-start gap-2 opacity-90">
-                <Phone className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
-                <span>+1 (555) 123-4567</span>
-              </li>
-              <li className="flex items-start gap-2 opacity-90">
-                <MapPin className="w-5 h-5 mt-1 flex-shrink-0 text-primary" />
-                <span>123 Hope Street, Community Center</span>
+              <li>
+                <a href="#stories" className="text-white/80 hover:text-primary transition-colors">
+                  Share your story
+                </a>
               </li>
             </ul>
+          </div>
+
+          {/* CONTACT US Column */}
+          <div>
+            <h4 className="text-primary text-sm font-semibold mb-6 uppercase tracking-wider">
+              Contact Us
+            </h4>
+            <ul className="space-y-3">
+              <li className="text-white/80">+1 (999) 999-99-99</li>
+              <li className="text-white/80">hello@logoipsum.com</li>
+              <li className="text-white/80">London</li>
+            </ul>
+          </div>
+
+          {/* Logo Column */}
+          <div className="flex justify-end">
+            <div className="text-right">
+              <div className="flex items-center gap-3 justify-end">
+                <div className="w-16 h-16 bg-primary rounded-sm flex items-center justify-center">
+                  <span className="text-charcoal font-bold text-xl">TAF</span>
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-xl">ADUNBI</h3>
+                  <p className="text-white/60 text-xs">FOUNDATION</p>
+                  <p className="text-primary text-xs italic">Transforming lives</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Social Media & Copyright */}
-        <div className="mt-12 pt-8 border-t border-primary/30">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="opacity-75">
-              © {new Date().getFullYear()} The Adunbi Foundation. All rights reserved.
-            </p>
+        {/* Mailing List Section */}
+        <div className="grid md:grid-cols-2 gap-8 items-end mb-12">
+          <div>
+            <h4 className="text-primary text-sm font-semibold mb-4 uppercase tracking-wider">
+              Join Our Mailing List
+            </h4>
+            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
+              <Input
+                type="email"
+                placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-white text-black border-0 h-12"
+                required
+              />
+              <Button 
+                type="submit" 
+                className="w-full bg-primary hover:bg-primary/90 text-charcoal font-bold h-12 text-lg"
+              >
+                SUBSCRIBE
+              </Button>
+            </form>
+          </div>
+
+          {/* Social Media & Follow Us */}
+          <div>
+            <h4 className="text-primary text-sm font-semibold mb-4 uppercase tracking-wider">
+              Follow Us
+            </h4>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all"
-                aria-label="LinkedIn"
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
+                aria-label="YouTube"
               >
-                <Linkedin className="w-5 h-5" />
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p className="text-white/60">© 2025 — All rights reserved</p>
+          <p className="text-white/60">
+            Powered by <span className="text-white">eckplus</span>
+          </p>
         </div>
       </div>
     </footer>
