@@ -17,30 +17,30 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 43 96% 56%;
+    --primary: 41 62% 52%;
     --primary-foreground: 0 0% 15%;
 
-    --secondary: 43 100% 96%;
+    --secondary: 41 62% 96%;
     --secondary-foreground: 0 0% 15%;
 
-    --muted: 43 100% 96%;
+    --muted: 41 62% 96%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 43 96% 56%;
+    --accent: 41 62% 52%;
     --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 43 50% 85%;
-    --input: 43 50% 90%;
-    --ring: 43 96% 56%;
+    --border: 41 40% 85%;
+    --input: 41 40% 90%;
+    --ring: 41 62% 52%;
 
     --radius: 0.5rem;
     
     --charcoal: 0 0% 15%;
-    --cream: 43 100% 96%;
-    --gold: 43 96% 56%;
+    --cream: 41 62% 96%;
+    --gold: 41 62% 52%;
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -71,7 +71,7 @@ All colors MUST be HSL.
     --popover: 0 0% 20%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 43 96% 56%;
+    --primary: 41 62% 52%;
     --primary-foreground: 0 0% 15%;
 
     --secondary: 0 0% 25%;
@@ -80,7 +80,7 @@ All colors MUST be HSL.
     --muted: 0 0% 25%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 43 96% 56%;
+    --accent: 41 62% 52%;
     --accent-foreground: 0 0% 15%;
 
     --destructive: 0 62.8% 30.6%;
@@ -88,11 +88,11 @@ All colors MUST be HSL.
 
     --border: 0 0% 30%;
     --input: 0 0% 30%;
-    --ring: 43 96% 56%;
+    --ring: 41 62% 52%;
     
     --charcoal: 0 0% 15%;
     --cream: 0 0% 25%;
-    --gold: 43 96% 56%;
+    --gold: 41 62% 52%;
   }
 }
 
