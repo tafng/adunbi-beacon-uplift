@@ -1,26 +1,26 @@
-import { Card, CardContent } from "@/components/ui/card";
-import educationImage from "@/assets/program-education.jpg";
-import empowermentImage from "@/assets/program-empowerment.jpg";
-import communityImage from "@/assets/program-community.jpg";
+import { Card } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
+import wepImage from "@/assets/program-wep.png";
+import ymepImage from "@/assets/program-ymep.png";
+import cmpImage from "@/assets/program-cmp.png";
+import aspImage from "@/assets/program-asp.png";
 
 const programs = [
   {
-    title: "TAF Scholarship Program",
-    image: educationImage,
-    description:
-      "Providing educational opportunities through scholarships that open doors to brighter futures for deserving students.",
+    title: "Women Empowerment Program (WEP)",
+    image: wepImage,
   },
   {
-    title: "TAF Empowerment & Skills Development",
-    image: empowermentImage,
-    description:
-      "Equipping individuals with practical skills and knowledge needed to thrive in today's competitive landscape.",
+    title: "Youth Mentoring Empowerment Program (YMEP)",
+    image: ymepImage,
   },
   {
-    title: "TAF Community Outreach",
-    image: communityImage,
-    description:
-      "Building stronger communities through programs that bring people together and create lasting positive impact.",
+    title: "Couples Marriage Program (CMP)",
+    image: cmpImage,
+  },
+  {
+    title: "Academic Support Program (ASP)",
+    image: aspImage,
   },
 ];
 
@@ -28,40 +28,39 @@ const Programs = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary animate-fade-in-up">
-            Our Programs
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">
+            Our Programs –{" "}
+            <span className="text-primary">Empowering Lives, Building Futures</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up">
-            Empowering Lives, Building Futures
+          <p className="text-base md:text-lg text-muted-foreground max-w-4xl mx-auto animate-fade-in-up leading-relaxed">
+            At TAF, we run targeted programs that address the real needs of vulnerable women, youth,
+            children, and families across Nigeria. Each program is designed to break cycles of poverty,
+            build stability, and open doors to opportunity.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="overflow-hidden hover-lift animate-fade-in-up border-2 border-primary/20"
+              className="group relative overflow-hidden hover-lift animate-fade-in-up border-0 rounded-lg cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={program.image}
                   alt={program.title}
-                  className="w-full h-full object-cover hover-scale"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-2xl font-bold text-background">
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between">
+                  <h3 className="text-xl font-bold text-white pr-4">
                     {program.title}
                   </h3>
+                  <ArrowRight className="w-6 h-6 text-white flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
               </div>
-              <CardContent className="p-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  {program.description}
-                </p>
-              </CardContent>
             </Card>
           ))}
         </div>
