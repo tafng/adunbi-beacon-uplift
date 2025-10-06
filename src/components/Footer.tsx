@@ -2,8 +2,9 @@ import logo from "@/assets/logo-footer.png";
 import poweredBy from "@/assets/powered-by.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Facebook, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
 
 const Footer = () => {
@@ -29,24 +30,19 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#programs" className="text-white/80 hover:text-primary transition-colors">
+                <Link to="/programs" className="text-white/80 hover:text-primary transition-colors">
                   Programs
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#events" className="text-white/80 hover:text-primary transition-colors">
-                  Events
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="text-white/80 hover:text-primary transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#gallery" className="text-white/80 hover:text-primary transition-colors">
+                <Link to="/gallery" className="text-white/80 hover:text-primary transition-colors">
                   Gallery
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-white/80 hover:text-primary transition-colors">
+                  About Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -58,38 +54,38 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#donate" className="text-white/80 hover:text-primary transition-colors">
+                <Link to="/get-involved#donate" className="text-white/80 hover:text-primary transition-colors">
                   Donate
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#volunteer" className="text-white/80 hover:text-primary transition-colors">
+                <Link to="/get-involved#volunteer" className="text-white/80 hover:text-primary transition-colors">
                   Volunteer
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#partner" className="text-white/80 hover:text-primary transition-colors">
+                <Link to="/get-involved#partner" className="text-white/80 hover:text-primary transition-colors">
                   Partner with us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* PROGRAMS Column */}
+          {/* RESOURCES Column */}
           <div>
             <h4 className="text-primary text-sm font-semibold mb-6 uppercase tracking-wider">
-              Programs
+              Resources
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#impact" className="text-white/80 hover:text-primary transition-colors">
-                  Impact
-                </a>
+                <Link to="/impacts-stories" className="text-white/80 hover:text-primary transition-colors">
+                  Impact Stories
+                </Link>
               </li>
               <li>
-                <a href="#stories" className="text-white/80 hover:text-primary transition-colors">
-                  Share your story
-                </a>
+                <Link to="/get-involved" className="text-white/80 hover:text-primary transition-colors">
+                  Get Involved
+                </Link>
               </li>
             </ul>
           </div>
@@ -100,9 +96,23 @@ const Footer = () => {
               Contact Us
             </h4>
             <ul className="space-y-3">
-              <li className="text-white/80">+1 (999) 999-99-99</li>
-              <li className="text-white/80">hello@logoipsum.com</li>
-              <li className="text-white/80">London</li>
+              <li className="text-white/80 flex items-start gap-2">
+                <Phone className="w-4 h-4 mt-1 flex-shrink-0" />
+                <div>
+                  <div>08083593842</div>
+                  <div>08053170006</div>
+                </div>
+              </li>
+              <li className="text-white/80 flex items-center gap-2">
+                <Mail className="w-4 h-4 flex-shrink-0" />
+                <a href="mailto:info@taf.ng" className="hover:text-primary transition-colors">
+                  info@taf.ng
+                </a>
+              </li>
+              <li className="text-white/80 flex items-start gap-2">
+                <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                <span>No 12 Rawng Pam street Jos, Plateau State</span>
+              </li>
             </ul>
           </div>
 
@@ -147,7 +157,7 @@ const Footer = () => {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61581595237910"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
@@ -156,7 +166,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/theadunbifoundation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
@@ -172,15 +182,6 @@ const Footer = () => {
                 aria-label="YouTube"
               >
                 <Youtube className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-all"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
