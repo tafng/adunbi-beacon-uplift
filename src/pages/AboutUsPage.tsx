@@ -165,28 +165,44 @@ const AboutUsPage = () => {
 
 
       {/* Communities Served */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F0E8]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 text-primary">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-[#E8B84A]">
             Communities Served
           </h2>
-          <p className="text-center text-lg text-foreground/80 mb-12 max-w-3xl mx-auto">
-            At TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities
-          </p>
-          <div className="grid md:grid-cols-4 gap-6 mb-12">
+          
+          <div className="max-w-5xl mx-auto space-y-6 mb-16">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              TAF's work is situated in Nigeria, specifically in the North Central and South-South geopolitical zones. 
+              We work with marginalized and vulnerable populations comprising of women, young people and children living 
+              in communities with poor access to social safety nets and other social amenities. These communities are 
+              characterized by entrenched socio-economic and socio-cultural challenges which results in deep rooted poverty 
+              and inequalities.
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We focus on populations affected by sexual and gender-based violence, sexual and reproductive health issues, 
+              social exclusion, child protection and safeguarding challenges, unemployed youth and teenage mothers, children 
+              with special needs, girls at risk of early marriage, and out-of-school children.
+            </p>
+            
+            <p className="text-lg text-gray-700 leading-relaxed">
+              We understand that gender inequalities, poverty and hunger, violent extremism and insurgency, environmental 
+              degradation and climate change, displacements due to conflicts and disasters, breakdown in governance, early 
+              marriage, and economic downturns are issues that drive vulnerability, hence we aim to address these root causes 
+              in our programs and projects.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-6">
             {communities.map((community) => (
               <div
                 key={community.id}
-                className="aspect-square bg-charcoal rounded-lg flex items-center justify-center text-white text-4xl font-bold"
+                className="aspect-square bg-[#2D2D2D] rounded-lg shadow-lg flex items-center justify-center text-white text-4xl font-bold"
               >
                 {community.id}
               </div>
             ))}
-          </div>
-          <div className="text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-charcoal font-bold px-8 py-6 text-lg">
-              SEE MORE
-            </Button>
           </div>
         </div>
       </section>
