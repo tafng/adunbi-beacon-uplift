@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getFormattedStats } from "@/data/impactStats";
@@ -11,6 +12,7 @@ import founder3 from "@/assets/founder-3.png";
 import bauhausPattern from "@/assets/bauhaus-pattern.png";
 
 const AboutUsPage = () => {
+  const navigate = useNavigate();
   const impactStats = getFormattedStats();
 
   const values = [
@@ -261,13 +263,13 @@ const AboutUsPage = () => {
       {/* Get Involved CTA */}
       <section className="py-16 bg-cream">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto border-4 border-primary rounded-lg p-8 md:p-12 bg-white">
+          <div className="max-w-5xl mx-auto border-[3px] border-[#E8B84A] rounded-lg p-8 md:p-12 bg-white">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#E8B84A]">
                   Get Involved
                 </h2>
-                <p className="text-lg text-foreground">
+                <p className="text-lg text-gray-700">
                   At TAF, we run targeted programs that address the real needs of vulnerable
                 </p>
               </div>
@@ -275,9 +277,12 @@ const AboutUsPage = () => {
                 <Input
                   type="email"
                   placeholder="Email"
-                  className="bg-cream border-border h-12"
+                  className="bg-white border-gray-300 h-12"
                 />
-                <Button className="w-full bg-primary hover:bg-primary/90 text-charcoal font-bold h-12 text-lg">
+                <Button 
+                  onClick={() => navigate('/get-involved')}
+                  className="w-full bg-[#E8B84A] hover:bg-[#E8B84A]/90 text-white font-bold h-12 text-lg"
+                >
                   GET INVOLVED
                 </Button>
               </div>
