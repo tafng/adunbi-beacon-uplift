@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
-    <section className="py-20 bg-charcoal text-background">
+    <section className="py-12 md:py-16 bg-charcoal text-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fade-in-up">
@@ -16,7 +16,7 @@ const AboutUs = () => {
             through our comprehensive programs and initiatives.
           </p>
 
-          <div className="border-2 border-primary p-12 rounded-lg mb-8 animate-fade-in-up bg-charcoal/50">
+          <div className="border-2 border-primary p-6 md:p-10 rounded-lg mb-6 animate-fade-in-up bg-charcoal/50">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-primary">
               Our Mission
             </h3>
