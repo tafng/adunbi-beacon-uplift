@@ -34,22 +34,43 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen pt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] min-h-screen">
-          {/* Left Panel - Image */}
-          <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden h-[40vh] lg:h-auto">
-            <img 
-              src={heroLeftImage} 
-              alt="TAF volunteers making a difference" 
-              className="w-full h-full object-cover"
-            />
-          </div>
+      <section className="min-h-screen pt-20 relative overflow-hidden">
+        {/* Full-Width Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroLeftImage} 
+            alt="TAF volunteers making a difference" 
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient Overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        </div>
 
-          {/* Right Panel - Donation Form */}
-          <div className="bg-white flex items-center justify-center p-4 lg:p-16">
-            <div className="w-full max-w-lg">
-              <div className="bg-white p-4 sm:p-8 rounded-lg shadow-lg border border-gray-200">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+        {/* Content Container */}
+        <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full items-center">
+            
+            {/* Hero Text - Left Side */}
+            <div className="text-white space-y-6 animate-fade-in-up">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Transform Lives <br />
+                <span className="text-[#D4A574]">Today</span>
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-200 max-w-lg">
+                Join TAF in empowering communities through education, mentorship, and sustainable development programs.
+              </p>
+              <div className="flex gap-4 text-sm text-gray-300">
+                <div className="flex items-center gap-2">
+                  <Gift className="w-5 h-5 text-[#D4A574]" />
+                  <span>100% goes to programs</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Glassmorphism Donation Card - Right Side */}
+            <div className="lg:ml-auto w-full max-w-md animate-scale-in">
+              <div className="backdrop-blur-xl bg-white/10 border border-white/20 p-6 sm:p-8 rounded-2xl shadow-2xl">
+                <h2 className="text-2xl font-bold text-white mb-6">
                   Donation Options
                 </h2>
 
@@ -62,10 +83,10 @@ const Hero = () => {
                           key={amount}
                           type="button"
                           onClick={() => setFormData({ ...formData, amount, customAmount: "" })}
-                          className={`flex-1 py-3 px-4 text-sm font-semibold rounded border-2 transition-all ${
+                          className={`flex-1 py-3 px-4 text-sm font-semibold rounded-lg border-2 transition-all ${
                             formData.amount === amount
-                              ? "bg-[#D4A574] text-white border-[#D4A574]"
-                              : "bg-white text-gray-700 border-gray-300 hover:border-[#D4A574]"
+                              ? "bg-[#D4A574] text-white border-[#D4A574] shadow-lg"
+                              : "bg-white/10 text-white border-white/30 hover:border-[#D4A574] hover:bg-white/20"
                           }`}
                         >
                           ₦{parseInt(amount).toLocaleString()}
@@ -75,10 +96,10 @@ const Hero = () => {
                     <button
                       type="button"
                       onClick={() => setFormData({ ...formData, amount: "custom" })}
-                      className={`w-full py-3 px-4 text-sm font-semibold rounded border-2 transition-all ${
+                      className={`w-full py-3 px-4 text-sm font-semibold rounded-lg border-2 transition-all ${
                         formData.amount === "custom"
-                          ? "bg-[#D4A574] text-white border-[#D4A574]"
-                          : "bg-white text-gray-700 border-gray-300 hover:border-[#D4A574]"
+                          ? "bg-[#D4A574] text-white border-[#D4A574] shadow-lg"
+                          : "bg-white/10 text-white border-white/30 hover:border-[#D4A574] hover:bg-white/20"
                       }`}
                     >
                       CUSTOM FEE
@@ -96,7 +117,7 @@ const Hero = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, customAmount: e.target.value })
                         }
-                        className="bg-white border-2 border-gray-300 focus:border-[#D4A574] rounded py-3 text-base"
+                        className="bg-white/20 backdrop-blur-sm border-2 border-white/30 focus:border-[#D4A574] rounded-lg py-3 text-base text-white placeholder:text-white/60"
                       />
                     </div>
                   )}
@@ -109,10 +130,10 @@ const Hero = () => {
                           key={freq}
                           type="button"
                           onClick={() => setFormData({ ...formData, frequency: freq })}
-                          className={`py-3 px-2 text-xs font-bold uppercase rounded border-2 transition-all ${
+                          className={`py-3 px-2 text-xs font-bold uppercase rounded-lg border-2 transition-all ${
                             formData.frequency === freq
-                              ? "bg-[#D4A574] text-white border-[#D4A574]"
-                              : "bg-white text-gray-700 border-gray-300 hover:border-[#D4A574]"
+                              ? "bg-[#D4A574] text-white border-[#D4A574] shadow-lg"
+                              : "bg-white/10 text-white border-white/30 hover:border-[#D4A574] hover:bg-white/20"
                           }`}
                         >
                           {freq.replace("-", " ")}
@@ -123,7 +144,7 @@ const Hero = () => {
 
                   {/* Program Selection */}
                   <div>
-                    <Label htmlFor="program" className="text-gray-700 text-sm mb-2 block">
+                    <Label htmlFor="program" className="text-white text-sm mb-2 block">
                       Select the program you want to donate into
                     </Label>
                     <Select
@@ -132,33 +153,34 @@ const Hero = () => {
                         setFormData({ ...formData, program: value })
                       }
                     >
-                      <SelectTrigger id="program" className="bg-white border-2 border-gray-300 focus:border-[#D4A574] rounded py-3 text-sm">
+                      <SelectTrigger id="program" className="bg-white/20 backdrop-blur-sm border-2 border-white/30 focus:border-[#D4A574] rounded-lg py-3 text-sm text-white">
                         <SelectValue placeholder="Select program" />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="wep">Women Empowerment Program (WEP)</SelectItem>
-                        <SelectItem value="ymep">Youth Mentoring Empowerment Program (YMEP)</SelectItem>
-                        <SelectItem value="cmp">Couples Marriage Program (CMP)</SelectItem>
-                        <SelectItem value="asp">Academic Support Program (ASP)</SelectItem>
+                      <SelectContent className="bg-gray-900/95 backdrop-blur-xl border-white/20">
+                        <SelectItem value="wep" className="text-white hover:bg-white/10">Women Empowerment Program (WEP)</SelectItem>
+                        <SelectItem value="ymep" className="text-white hover:bg-white/10">Youth Mentoring Empowerment Program (YMEP)</SelectItem>
+                        <SelectItem value="cmp" className="text-white hover:bg-white/10">Couples Marriage Program (CMP)</SelectItem>
+                        <SelectItem value="asp" className="text-white hover:bg-white/10">Academic Support Program (ASP)</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   {/* Trust Message */}
-                  <p className="text-xs text-gray-600 text-center">
+                  <p className="text-xs text-white/80 text-center">
                     🔒 A Secure payment. 100% of your donation goes directly into TAF programs.
                   </p>
 
                   {/* Submit Button */}
                   <Button 
                     type="submit" 
-                    className="w-full font-bold text-base py-6 bg-[#D4A574] hover:bg-[#C89960] text-white rounded transition-all" 
+                    className="w-full font-bold text-base py-6 bg-[#D4A574] hover:bg-[#C89960] text-white rounded-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105" 
                   >
                     DONATE
                   </Button>
                 </form>
               </div>
             </div>
+
           </div>
         </div>
       </section>
