@@ -54,14 +54,6 @@ const AboutUsPage = () => {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            {/* Heading */}
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-                ABOUT US
-              </h2>
-              <p className="text-xl text-foreground/80">Founder Story</p>
-            </div>
-
             {/* Story Text */}
             <div className="mb-12 space-y-6">
               <p className="text-lg leading-relaxed text-foreground">
