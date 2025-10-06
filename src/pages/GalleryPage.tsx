@@ -18,6 +18,11 @@ import {
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
 
 const GalleryPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,12 +37,14 @@ const GalleryPage = () => {
 
   const totalPages = 5;
 
-  // Placeholder gallery images
-  const galleryImages = Array.from({ length: 15 }, (_, i) => ({
-    id: i + 1,
-    category: i % 3 === 0 ? "events" : i % 3 === 1 ? "programs" : "community",
-    description: "No Description",
-  }));
+  // Gallery images
+  const galleryImages = [
+    { id: 1, src: gallery1, category: "events", description: "Foundation event and workshop" },
+    { id: 2, src: gallery2, category: "community", description: "Community engagement and training" },
+    { id: 3, src: gallery3, category: "events", description: "Speaker at foundation event" },
+    { id: 4, src: gallery4, category: "programs", description: "Program discussion and planning" },
+    { id: 5, src: gallery5, category: "community", description: "Community leader engagement" },
+  ];
 
   const handleStorySubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -113,12 +120,14 @@ const GalleryPage = () => {
             {galleryImages.map((image) => (
               <div
                 key={image.id}
-                className="aspect-[4/3] bg-gradient-to-br from-amber-500 to-primary rounded-lg cursor-pointer hover-scale overflow-hidden"
+                className="aspect-[4/3] bg-gray-100 rounded-lg cursor-pointer hover-scale overflow-hidden"
                 onClick={() => setSelectedImage(image.id)}
               >
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-primary/30"></div>
-                </div>
+                <img
+                  src={image.src}
+                  alt={image.description}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
@@ -224,10 +233,14 @@ const GalleryPage = () => {
         <DialogContent className="max-w-4xl bg-white p-8">
           <div className="relative">
             {/* Main Image */}
-            <div className="aspect-[4/3] bg-gradient-to-br from-amber-500 to-primary rounded-lg mb-4">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-primary/30"></div>
-              </div>
+            <div className="aspect-[4/3] bg-gray-100 rounded-lg mb-4">
+              {selectedImage && (
+                <img
+                  src={galleryImages.find((img) => img.id === selectedImage)?.src}
+                  alt={galleryImages.find((img) => img.id === selectedImage)?.description}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              )}
             </div>
 
             {/* Navigation Arrows */}
@@ -248,22 +261,24 @@ const GalleryPage = () => {
 
             {/* Description */}
             <DialogDescription className="text-center text-foreground/70 mb-4">
-              No Description
+              {galleryImages.find((img) => img.id === selectedImage)?.description || "No Description"}
             </DialogDescription>
 
             {/* Thumbnail Strip */}
             <div className="flex gap-2 justify-center overflow-x-auto pb-2">
-              {galleryImages.slice(0, 7).map((image) => (
+              {galleryImages.map((image) => (
                 <div
                   key={image.id}
                   onClick={() => setSelectedImage(image.id)}
-                  className={`w-20 h-16 bg-gradient-to-br from-amber-500 to-primary rounded cursor-pointer flex-shrink-0 hover-scale ${
+                  className={`w-20 h-16 bg-gray-100 rounded cursor-pointer flex-shrink-0 hover-scale overflow-hidden ${
                     selectedImage === image.id ? "ring-2 ring-primary" : ""
                   }`}
                 >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-primary/30"></div>
-                  </div>
+                  <img
+                    src={image.src}
+                    alt={image.description}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ))}
             </div>
