@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useState } from "react";
 import DonationDetailsDialog from "./DonationDetailsDialog";
 import { Gift } from "lucide-react";
+import heroLeftImage from "@/assets/hero-left.png";
 
 const Hero = () => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -35,19 +36,13 @@ const Hero = () => {
     <>
       <section className="min-h-screen">
         <div className="grid lg:grid-cols-2 min-h-screen">
-          {/* Left Panel - Decorative */}
-          <div className="bg-[#F5EFE7] flex items-center justify-center p-8 lg:p-16">
-            <div className="max-w-md text-center space-y-6">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-[#D4A574] rounded-full">
-                <Gift className="w-12 h-12 text-white" />
-              </div>
-              <p className="text-sm text-gray-600 uppercase tracking-wide">
-                Every gift helps us reach more families in need
-              </p>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                Your Gift<br />Transforms <span className="text-[#D4A574] italic">Lives</span>
-              </h1>
-            </div>
+          {/* Left Panel - Image */}
+          <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden">
+            <img 
+              src={heroLeftImage} 
+              alt="TAF volunteers making a difference" 
+              className="w-full h-full min-h-screen object-cover"
+            />
           </div>
 
           {/* Right Panel - Donation Form */}
