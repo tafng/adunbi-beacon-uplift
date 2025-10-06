@@ -35,7 +35,7 @@ const Hero = () => {
   return (
     <>
       <section className="min-h-screen">
-        <div className="grid lg:grid-cols-2 min-h-screen">
+        <div className="grid lg:grid-cols-[40%_60%] min-h-screen">
           {/* Left Panel - Image */}
           <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden">
             <img 
@@ -47,7 +47,7 @@ const Hero = () => {
 
           {/* Right Panel - Donation Form */}
           <div className="bg-white flex items-center justify-center p-6 lg:p-16">
-            <div className="w-full max-w-md">
+            <div className="w-full max-w-lg">
               <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Donation Options
