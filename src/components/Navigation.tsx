@@ -9,7 +9,7 @@ const Navigation = () => {
   const navLinks = [
     { name: "About", href: "/about" },
     { name: "Programs", href: "/programs" },
-    { name: "Impacts & Stories", href: "/impacts-stories" },
+    { name: "Gallery", href: "/gallery" },
   ];
 
   return (
