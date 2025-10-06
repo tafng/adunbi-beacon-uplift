@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tafng/public_html/
+    - /bin/npm install
+    - /bin/npm run build
     - /bin/cp -R dist/* $DEPLOYPATH
