@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getFormattedStats } from "@/data/impactStats";
+import { DollarSign, FileText, Book } from "lucide-react";
 import aboutHeroBg from "@/assets/about-hero-bg.png";
 import founder1 from "@/assets/founder-1.png";
 import founder2 from "@/assets/founder-2.png";
@@ -203,6 +204,56 @@ const AboutUsPage = () => {
                 {community.id}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements & Milestones */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#E8B84A]">
+            Achievements & Milestones
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Seed Capital Awards */}
+            <div className="border-[3px] border-[#E8B84A] rounded-lg p-8 bg-white text-center">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full border-[3px] border-[#E8B84A] flex items-center justify-center">
+                <DollarSign className="w-10 h-10 text-[#E8B84A]" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
+                Seed Capital Awards
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Provisions of startup funding to launch/scale business ideas
+              </p>
+            </div>
+
+            {/* Official Business Registration */}
+            <div className="border-[3px] border-[#E8B84A] rounded-lg p-8 bg-white text-center">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full border-[3px] border-[#E8B84A] flex items-center justify-center">
+                <FileText className="w-10 h-10 text-[#E8B84A]" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
+                Official Business Registration
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Provision of free business registration with the Corporate Affairs Commission (CAC)
+              </p>
+            </div>
+
+            {/* Educational Support */}
+            <div className="border-[3px] border-[#E8B84A] rounded-lg p-8 bg-white text-center">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full border-[3px] border-[#E8B84A] flex items-center justify-center">
+                <Book className="w-10 h-10 text-[#E8B84A]" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-xl font-bold mb-4 text-gray-900">
+                Educational Support
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Provision of scholarships and academic assistance to children of widows, orphans, and low-income families—supporting access to primary, secondary, and tertiary education
+              </p>
+            </div>
           </div>
         </div>
       </section>
