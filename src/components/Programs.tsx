@@ -44,22 +44,21 @@ const Programs = () => {
           {programs.map((program, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden hover-lift animate-fade-in-up border-0 rounded-lg cursor-pointer"
+              className="group overflow-hidden hover-lift animate-fade-in-up border-0 rounded-lg cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden">
                 <img
                   src={program.image}
                   alt={program.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-8 flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-white pr-4 drop-shadow-lg">
-                    {program.title}
-                  </h3>
-                  <ArrowRight className="w-6 h-6 text-white flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1 drop-shadow-lg" />
-                </div>
+              </div>
+              <div className="bg-[#2C2C2C] p-6 flex items-center justify-between">
+                <h3 className="text-xl font-bold text-white pr-4">
+                  {program.title}
+                </h3>
+                <ArrowRight className="w-6 h-6 text-white flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
               </div>
             </Card>
           ))}
