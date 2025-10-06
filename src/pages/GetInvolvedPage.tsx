@@ -339,22 +339,6 @@ const GetInvolvedPage = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-
-              <div className="mt-12 text-center">
-                <p className="text-muted-foreground mb-4">
-                  Contact us today at{" "}
-                  <a
-                    href="mailto:theadunbifoundation@gmail.com"
-                    className="text-primary hover:underline font-medium"
-                  >
-                    theadunbifoundation@gmail.com
-                  </a>{" "}
-                  to begin a conversation about how we can work together to transform lives.
-                </p>
-                <Button size="lg" asChild>
-                  <a href="mailto:theadunbifoundation@gmail.com">Contact Us</a>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
