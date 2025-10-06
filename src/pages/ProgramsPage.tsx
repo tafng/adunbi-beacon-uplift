@@ -60,20 +60,17 @@ const ProgramsPage = () => {
                 key={index}
                 className="group overflow-hidden border-0 shadow-lg"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="h-64 overflow-hidden">
                   <img
                     src={program.image}
                     alt={program.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="bg-charcoal/80 px-4 py-2 inline-block mb-2">
-                      <h3 className="text-sm font-bold text-white">
-                        {program.title}
-                      </h3>
-                    </div>
-                  </div>
+                </div>
+                <div className="bg-[#2C2C2C] px-6 py-4">
+                  <h3 className="text-lg font-bold text-white">
+                    {program.title}
+                  </h3>
                 </div>
                 <div className="p-6 bg-card">
                   <p className="text-muted-foreground mb-4">{program.description}</p>
