@@ -1,14 +1,14 @@
 ---
 deployment:
   tasks:
-    # IMPORTANT: Update the username 'yourusername' below to match your cPanel username
-    - export DEPLOYPATH=/home/yourusername/public_html/
+    # Deployment path for tafng user
+    - export DEPLOYPATH=/home/tafng/public_html/
     
     # Set Node.js version (adjust if needed)
     - export NODEJS_VERSION=18
     
-    # Activate Node.js environment (update path with your cPanel username)
-    - source /home/yourusername/nodevenv/public_html/18/bin/activate
+    # Activate Node.js environment
+    - source /home/tafng/nodevenv/public_html/18/bin/activate
     
     # Install dependencies
     - npm install
