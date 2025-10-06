@@ -1,23 +1,5 @@
 ---
 deployment:
   tasks:
-    # Deployment path for tafng user
     - export DEPLOYPATH=/home/tafng/public_html/
-    
-    # Set Node.js version (adjust if needed)
-    - export NODEJS_VERSION=18
-    
-    # Activate Node.js environment
-    - source /home/tafng/nodevenv/public_html/18/bin/activate
-    
-    # Install dependencies
-    - npm install
-    
-    # Build the production bundle
-    - npm run build
-    
-    # Deploy built files to public directory
     - /bin/cp -R dist/* $DEPLOYPATH
-    
-    # Copy .htaccess for proper routing (if needed)
-    - /bin/cp dist/.htaccess $DEPLOYPATH 2>/dev/null || :
