@@ -23,7 +23,7 @@ const ImpactStats = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-secondary">
+    <section ref={sectionRef} className="py-12 md:py-14 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {impactStats.map((stat, index) => (

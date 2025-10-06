@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 
 const AboutUs = () => {
   return (
-    <section className="py-12 md:py-16 bg-charcoal text-background">
+    <section className="py-8 md:py-10 bg-charcoal text-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
             About Us
           </h2>
           
-          <p className="text-lg md:text-xl mb-12 leading-relaxed animate-fade-in-up opacity-90">
+          <p className="text-lg md:text-xl mb-8 leading-relaxed animate-fade-in-up opacity-90">
             The Adunbi Foundation (TAF) is dedicated to transforming lives through education, 
             empowerment, and community development. We believe every individual deserves the 
             opportunity to reach their full potential, and we're committed to making that a reality 
