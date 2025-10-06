@@ -38,15 +38,15 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative bg-gradient-to-br from-white via-gray-50 to-[#F5EFE7]/20 py-12 lg:py-16 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-white via-gray-50 to-[#F5EFE7]/20 py-8 lg:py-16 overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4A574]/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#D4A574]/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 lg:w-96 lg:h-96 bg-[#D4A574]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 lg:w-96 lg:h-96 bg-[#D4A574]/5 rounded-full blur-3xl"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
+        <div className="container mx-auto px-3 sm:px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center max-w-7xl mx-auto">
             {/* Left - Hero Image */}
-            <div className="animate-fade-in order-2 lg:order-1 relative group">
+            <div className="animate-fade-in order-2 lg:order-1 relative group hidden lg:block">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#D4A574]/20 to-transparent rounded-3xl transform group-hover:scale-105 transition-transform duration-500"></div>
               <img
                 src={heroImage}
@@ -65,32 +65,32 @@ const Hero = () => {
 
             {/* Right - Simplified Donation Form */}
             <div className="animate-fade-in order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-white via-[#F5EFE7]/50 to-[#EDE4D6]/50 p-8 lg:p-10 rounded-3xl shadow-2xl border-2 border-[#D4A574]/20 backdrop-blur-sm">
-                <div className="mb-8">
-                  <div className="inline-flex items-center gap-2 bg-[#D4A574]/10 px-4 py-2 rounded-full mb-4">
-                    <span className="text-sm font-semibold text-[#D4A574]">💛 Make an Impact</span>
+              <div className="bg-gradient-to-br from-white via-[#F5EFE7]/50 to-[#EDE4D6]/50 p-5 sm:p-8 lg:p-10 rounded-2xl lg:rounded-3xl shadow-2xl border-2 border-[#D4A574]/20 backdrop-blur-sm">
+                <div className="mb-6 lg:mb-8">
+                  <div className="inline-flex items-center gap-2 bg-[#D4A574]/10 px-3 py-1.5 rounded-full mb-3">
+                    <span className="text-xs sm:text-sm font-semibold text-[#D4A574]">💛 Make an Impact</span>
                   </div>
-                  <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 lg:mb-3 leading-tight">
                     Your Gift<br />Transforms Lives
                   </h1>
-                  <p className="text-gray-700 text-lg">
+                  <p className="text-gray-700 text-base sm:text-lg">
                     Simple, secure, and making a real difference
                   </p>
                 </div>
 
-                <form onSubmit={handleDonateClick} className="space-y-7">
+                <form onSubmit={handleDonateClick} className="space-y-5 lg:space-y-7">
                   {/* Frequency Selection */}
                   <div>
-                    <Label className="text-gray-800 font-bold mb-4 block text-lg">How often would you like to give?</Label>
-                    <div className="grid grid-cols-3 gap-3">
+                    <Label className="text-gray-800 font-bold mb-3 block text-sm sm:text-base">How often would you like to give?</Label>
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
                       {["one-time", "monthly", "quarterly"].map((freq) => (
                         <button
                           key={freq}
                           type="button"
                           onClick={() => setFormData({ ...formData, frequency: freq })}
-                          className={`py-4 px-4 text-sm font-bold rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                          className={`py-3 sm:py-4 px-2 sm:px-4 text-xs sm:text-sm font-bold rounded-lg sm:rounded-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 sm:hover:-translate-y-1 ${
                             formData.frequency === freq
-                              ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-lg ring-2 ring-[#D4A574]/50 ring-offset-2"
+                              ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-lg ring-2 ring-[#D4A574]/50 ring-offset-1"
                               : "bg-white text-gray-700 border-2 border-gray-200 hover:border-[#D4A574]/50 hover:shadow-lg"
                           }`}
                         >
@@ -102,8 +102,8 @@ const Hero = () => {
 
                   {/* Quick Amount Selection with Impact */}
                   <div>
-                    <Label className="text-gray-800 font-bold mb-4 block text-lg">Choose your impact</Label>
-                    <div className="grid grid-cols-2 gap-4">
+                    <Label className="text-gray-800 font-bold mb-3 block text-sm sm:text-base">Choose your impact</Label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {quickAmounts.map((amt) => {
                         const Icon = amt.icon;
                         return (
@@ -111,15 +111,15 @@ const Hero = () => {
                             key={amt.value}
                             type="button"
                             onClick={() => setFormData({ ...formData, amount: amt.value, customAmount: "" })}
-                            className={`group py-5 px-4 text-left rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                            className={`group py-4 sm:py-5 px-4 text-left rounded-lg sm:rounded-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 sm:hover:-translate-y-1 ${
                               formData.amount === amt.value
-                                ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-xl ring-2 ring-[#D4A574]/50 ring-offset-2"
+                                ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-xl ring-2 ring-[#D4A574]/50 ring-offset-1"
                                 : "bg-white text-gray-700 border-2 border-gray-200 hover:border-[#D4A574]/50 hover:shadow-xl"
                             }`}
                           >
                             <div className="flex items-start gap-2 mb-1">
-                              <Icon className={`w-5 h-5 mt-0.5 ${formData.amount === amt.value ? "text-white" : "text-[#D4A574]"}`} />
-                              <span className="font-bold text-xl">
+                              <Icon className={`w-4 h-4 sm:w-5 sm:h-5 mt-0.5 ${formData.amount === amt.value ? "text-white" : "text-[#D4A574]"}`} />
+                              <span className="font-bold text-lg sm:text-xl">
                                 ₦{parseInt(amt.value).toLocaleString()}
                               </span>
                             </div>
@@ -132,13 +132,13 @@ const Hero = () => {
                       <button
                         type="button"
                         onClick={() => setFormData({ ...formData, amount: "custom" })}
-                        className={`col-span-2 py-5 px-4 text-center font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                        className={`sm:col-span-2 py-4 sm:py-5 px-4 text-center font-bold text-sm sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 active:scale-95 sm:hover:scale-105 sm:hover:-translate-y-1 ${
                           formData.amount === "custom"
-                            ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-xl ring-2 ring-[#D4A574]/50 ring-offset-2"
+                            ? "bg-gradient-to-br from-[#D4A574] to-[#C89960] text-white shadow-xl ring-2 ring-[#D4A574]/50 ring-offset-1"
                             : "bg-white text-gray-700 border-2 border-gray-200 hover:border-[#D4A574]/50 hover:shadow-xl"
                         }`}
                       >
-                        <Sparkles className="inline w-5 h-5 mr-2 mb-1" />
+                        <Sparkles className="inline w-4 h-4 sm:w-5 sm:h-5 mr-2 mb-0.5" />
                         CUSTOMIZE YOUR GIFT
                       </button>
                     </div>
@@ -147,7 +147,7 @@ const Hero = () => {
                   {/* Custom Amount Input */}
                   {formData.amount === "custom" && (
                     <div className="animate-fade-in">
-                      <Label htmlFor="customAmount" className="text-gray-800 font-bold mb-3 block text-lg">
+                      <Label htmlFor="customAmount" className="text-gray-800 font-bold mb-2 block text-sm sm:text-base">
                         Enter Your Amount (₦)
                       </Label>
                       <Input
@@ -158,14 +158,14 @@ const Hero = () => {
                         onChange={(e) =>
                           setFormData({ ...formData, customAmount: e.target.value })
                         }
-                        className="bg-white border-2 border-gray-200 focus:border-[#D4A574] focus:ring-2 focus:ring-[#D4A574]/20 rounded-xl py-6 text-lg font-semibold"
+                        className="bg-white border-2 border-gray-200 focus:border-[#D4A574] focus:ring-2 focus:ring-[#D4A574]/20 rounded-lg sm:rounded-xl py-5 sm:py-6 text-base sm:text-lg font-semibold"
                       />
                     </div>
                   )}
 
                   {/* Program Selection */}
                   <div>
-                    <Label htmlFor="program" className="text-gray-800 font-bold mb-3 block text-lg">
+                    <Label htmlFor="program" className="text-gray-800 font-bold mb-2 block text-sm sm:text-base">
                       Support a program close to your heart
                     </Label>
                     <Select
@@ -174,7 +174,7 @@ const Hero = () => {
                         setFormData({ ...formData, program: value })
                       }
                     >
-                      <SelectTrigger id="program" className="bg-white border-2 border-gray-200 focus:border-[#D4A574] focus:ring-2 focus:ring-[#D4A574]/20 rounded-xl py-7 text-base hover:shadow-lg transition-all">
+                      <SelectTrigger id="program" className="bg-white border-2 border-gray-200 focus:border-[#D4A574] focus:ring-2 focus:ring-[#D4A574]/20 rounded-lg sm:rounded-xl py-6 sm:py-7 text-sm sm:text-base hover:shadow-lg transition-all">
                         <SelectValue placeholder="Choose a program ❤️" />
                       </SelectTrigger>
                       <SelectContent>
@@ -187,17 +187,16 @@ const Hero = () => {
                   </div>
 
                   {/* Trust Signal & CTA */}
-                  <div className="space-y-4">
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200/50">
-                      <p className="text-sm text-gray-700 text-center font-medium">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-3 sm:p-4 rounded-lg sm:rounded-xl border border-blue-200/50">
+                      <p className="text-xs sm:text-sm text-gray-700 text-center font-medium">
                         ✨ Tax-deductible • 🔒 100% Secure • 💛 Trusted by 500+ donors
                       </p>
                     </div>
 
                     <Button 
                       type="submit" 
-                      className="w-full font-bold text-lg bg-gradient-to-r from-[#D4A574] to-[#C89960] hover:from-[#C89960] hover:to-[#B88850] text-white shadow-xl hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 transition-all duration-300" 
-                      size="lg"
+                      className="w-full font-bold text-base sm:text-lg py-6 sm:py-7 bg-gradient-to-r from-[#D4A574] to-[#C89960] hover:from-[#C89960] hover:to-[#B88850] text-white shadow-xl hover:shadow-2xl active:scale-95 sm:hover:scale-105 sm:hover:-translate-y-1 transition-all duration-300 rounded-lg sm:rounded-xl" 
                     >
                       💛 DONATE NOW
                     </Button>
