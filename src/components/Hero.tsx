@@ -35,20 +35,20 @@ const Hero = () => {
   return (
     <>
       <section className="min-h-screen">
-        <div className="grid grid-cols-[40%_60%] min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] min-h-screen">
           {/* Left Panel - Image */}
-          <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden">
+          <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden h-[40vh] lg:h-auto">
             <img 
               src={heroLeftImage} 
               alt="TAF volunteers making a difference" 
-              className="w-full h-full min-h-screen object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
 
           {/* Right Panel - Donation Form */}
-          <div className="bg-white flex items-center justify-center p-6 lg:p-16">
+          <div className="bg-white flex items-center justify-center p-4 lg:p-16">
             <div className="w-full max-w-lg">
-              <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className="bg-white p-4 sm:p-8 rounded-lg shadow-lg border border-gray-200">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Donation Options
                 </h2>
