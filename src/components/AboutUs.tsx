@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
-    <section className="py-6 md:py-8 bg-charcoal text-background">
+    <section className="py-6 md:py-8 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
