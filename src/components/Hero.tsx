@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="min-h-screen">
+      <section className="min-h-screen pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] min-h-screen">
           {/* Left Panel - Image */}
           <div className="bg-[#F5EFE7] flex items-center justify-center p-0 relative overflow-hidden h-[40vh] lg:h-auto">
