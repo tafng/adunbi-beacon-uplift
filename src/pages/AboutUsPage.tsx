@@ -7,6 +7,7 @@ import aboutHeroBg from "@/assets/about-hero-bg.png";
 import founder1 from "@/assets/founder-1.png";
 import founder2 from "@/assets/founder-2.png";
 import founder3 from "@/assets/founder-3.png";
+import bauhausPattern from "@/assets/bauhaus-pattern.png";
 
 const AboutUsPage = () => {
   const impactStats = getFormattedStats();
@@ -117,102 +118,51 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* Impact Story Section */}
-      <section className="py-20 bg-charcoal text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="aspect-square bg-gradient-to-br from-primary to-amber-600 rounded-lg"></div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">
-                Impact Story
-              </h2>
-              <p className="text-lg leading-relaxed mb-6 text-white/90">
-                At TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children.
-              </p>
-            </div>
-          </div>
-
-          <div className="max-w-4xl mx-auto mt-16">
-            <p className="text-lg leading-relaxed text-white/90">
-              At TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
-            {/* Mission */}
-            <div className="relative">
-              <div className="absolute -bottom-8 -left-8 w-full h-32 opacity-20">
-                <div className="flex gap-2">
-                  {[...Array(10)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-12 h-12"
-                      style={{
-                        background: ["#E8B84A", "#FF6B6B", "#4ECDC4", "#95E1D3", "#F38181"][i % 5],
-                        transform: i % 2 === 0 ? "rotate(45deg)" : "none",
-                        borderRadius: i % 3 === 0 ? "50%" : "0",
-                      }}
-                    ></div>
-                  ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="relative border-[3px] border-[#4ECDC4] bg-[#F5F0E8] rounded-lg overflow-hidden">
+              {/* Content Grid */}
+              <div className="grid md:grid-cols-2 gap-0">
+                {/* Mission */}
+                <div className="p-8 md:p-12">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[#E8B84A] text-center">
+                    Mission
+                  </h3>
+                  <p className="text-base leading-relaxed text-gray-700">
+                    We shall undertake empowerment programs and projects to support Women, Youth, Children, and Orphans ; and such activities that may be incidental to the realization of the overall vision of the organization
+                  </p>
                 </div>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-                Mission
-              </h2>
-              <p className="text-lg leading-relaxed text-foreground">
-                We shall undertake empowerment programs designed to break cycles of poverty for Women, Children, and Orphans, and teach as activities that may be incidental to the realization of the overall vision of the organization
-              </p>
-            </div>
 
-            {/* Vision */}
-            <div className="relative">
-              <div className="absolute -bottom-8 -right-8 w-full h-32 opacity-20">
-                <div className="flex gap-2 justify-end">
-                  {[...Array(10)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-12 h-12"
-                      style={{
-                        background: ["#E8B84A", "#FF6B6B", "#4ECDC4", "#95E1D3", "#F38181"][i % 5],
-                        transform: i % 2 === 0 ? "rotate(45deg)" : "none",
-                        borderRadius: i % 3 === 0 ? "50%" : "0",
-                      }}
-                    ></div>
-                  ))}
+                {/* Vertical Dotted Divider */}
+                <div className="hidden md:block absolute left-1/2 top-0 bottom-24 w-px border-l-2 border-dotted border-gray-400"></div>
+
+                {/* Vision */}
+                <div className="p-8 md:p-12 border-t md:border-t-0 md:border-l-0 border-dotted border-gray-300">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-6 text-[#E8B84A] text-center">
+                    Vision
+                  </h3>
+                  <p className="text-base leading-relaxed text-gray-700">
+                    It is our vision to provide social support to Africa's vulnerable, ensuring stability and promoting the idea for purposeful living.
+                  </p>
                 </div>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
-                Vision
-              </h2>
-              <p className="text-lg leading-relaxed text-foreground">
-                To create safe and empowering spaces for Africa's vulnerable, ensuring stability and promoting the ideal for purposeful living
-              </p>
+
+              {/* Bauhaus Pattern at Bottom */}
+              <div className="w-full h-20 md:h-24 overflow-hidden">
+                <img 
+                  src={bauhausPattern} 
+                  alt="" 
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-cream">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
-            Values
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-6">
-            {values.map((value, index) => (
-              <div key={index} className="flex items-start gap-6 bg-white p-6 rounded-lg shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-primary flex-shrink-0"></div>
-                <p className="text-lg text-foreground pt-3">{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Communities Served */}
       <section className="py-20 bg-white">
