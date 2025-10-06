@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { getFormattedStats } from "@/data/impactStats";
+import aboutHeroBg from "@/assets/about-hero-bg.png";
+import founder1 from "@/assets/founder-1.png";
+import founder2 from "@/assets/founder-2.png";
+import founder3 from "@/assets/founder-3.png";
 
 const AboutUsPage = () => {
   const impactStats = getFormattedStats();
@@ -27,8 +31,16 @@ const AboutUsPage = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-charcoal pt-32 pb-20 overflow-hidden">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={aboutHeroBg} 
+            alt="About Us Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4 tracking-wide">
               ABOUT US
@@ -38,40 +50,59 @@ const AboutUsPage = () => {
         </div>
       </section>
 
-      {/* Main Story Section */}
+      {/* Founder Story Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          {/* Story Text */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <p className="text-lg leading-relaxed text-foreground mb-8">
-              At TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities to transform their lives. Whether it's providing scholarships to students in need, teaching youth essential skills for employment, or offering resources for widows and orphans—we keep people at the center of everything we do. We believe in creating lasting change, one family at a time.
-            </p>
-          </div>
+          <div className="max-w-5xl mx-auto">
+            {/* Heading */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+                ABOUT US
+              </h2>
+              <p className="text-xl text-foreground/80">Founder Story</p>
+            </div>
 
-          {/* Three Images Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
-            <div className="aspect-[3/4] bg-gradient-to-br from-amber-600 to-primary rounded-lg overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-primary/30"></div>
-              </div>
+            {/* Story Text */}
+            <div className="mb-12 space-y-6">
+              <p className="text-lg leading-relaxed text-foreground">
+                The Adunbi Foundation (TAF) was birthed from a deep passion to see vulnerable communities—particularly women, youth, children, and families—lifted from cycles of poverty and neglect. Our founder, driven by personal conviction and a clear sense of purpose, envisioned a platform where tangible support meets genuine care, where lives are not just impacted but transformed.
+              </p>
+              <p className="text-lg leading-relaxed text-foreground">
+                From humble beginnings, TAF has grown into a trusted nonprofit organization committed to creating lasting change across Nigeria. We focus on sustainable empowerment—through education, skill acquisition, community development, and compassionate outreach. Every program we run is rooted in the belief that every person, regardless of their background, deserves access to opportunities that unlock their full potential.
+              </p>
             </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-primary to-amber-500 rounded-lg overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-primary/30"></div>
-              </div>
-            </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-primary/30"></div>
-              </div>
-            </div>
-          </div>
 
-          {/* Detailed Description */}
-          <div className="max-w-4xl mx-auto">
-            <p className="text-lg leading-relaxed text-foreground">
-              At TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children, and families across Nigeria. Each program is designed to break cycles of poverty, build stability, and equip beneficiaries with opportunities at TAF, we run targeted programs that address the real needs of vulnerable women, youth, children.
-            </p>
+            {/* Three Founder Images Grid */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="aspect-[3/4] overflow-hidden rounded-lg">
+                <img 
+                  src={founder1} 
+                  alt="Founder speaking at event" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg">
+                <img 
+                  src={founder2} 
+                  alt="Founder addressing audience" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="aspect-[3/4] overflow-hidden rounded-lg">
+                <img 
+                  src={founder3} 
+                  alt="Founder speaking passionately" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Bottom Text */}
+            <div>
+              <p className="text-lg leading-relaxed text-foreground">
+                Established in 2019, The Adunbi Foundation continues to expand its reach, partnering with stakeholders, donors, and communities to bring hope where it's needed most. We are more than an organization—we are a movement fueled by compassion, integrity, and a relentless commitment to uplifting lives across Africa.
+              </p>
+            </div>
           </div>
         </div>
       </section>
