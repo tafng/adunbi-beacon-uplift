@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
@@ -18,28 +19,28 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/">
+            <Link to="/">
               <img 
                 src={logo} 
                 alt="The Adunbi Foundation" 
                 className="h-12 cursor-pointer"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="font-medium hover:text-primary transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <Button className="bg-primary hover:bg-primary/90 text-charcoal font-semibold" asChild>
-              <a href="/get-involved">Get Involved</a>
+              <Link to="/get-involved">Get Involved</Link>
             </Button>
           </div>
 
@@ -62,17 +63,17 @@ const Navigation = () => {
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="font-medium hover:text-primary transition-colors py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <Button className="w-full bg-primary hover:bg-primary/90 text-charcoal font-semibold" asChild>
-                <a href="/get-involved">Get Involved</a>
+                <Link to="/get-involved">Get Involved</Link>
               </Button>
             </div>
           </div>
