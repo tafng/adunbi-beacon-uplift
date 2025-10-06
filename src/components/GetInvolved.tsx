@@ -5,8 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Heart, Users, Briefcase } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const GetInvolved = () => {
+  const navigate = useNavigate();
   const [storyForm, setStoryForm] = useState({
     name: "",
     email: "",
@@ -43,7 +45,12 @@ const GetInvolved = () => {
             <p className="text-muted-foreground mb-6">
               Your financial support helps us expand our programs and reach more lives.
             </p>
-            <Button className="font-semibold">Make a Donation</Button>
+            <Button 
+              className="font-semibold"
+              onClick={() => navigate('/get-involved#donate')}
+            >
+              Make a Donation
+            </Button>
           </div>
 
           <div className="text-center p-8 hover-lift animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
@@ -54,7 +61,11 @@ const GetInvolved = () => {
             <p className="text-muted-foreground mb-6">
               Share your time and talents to directly impact our community programs.
             </p>
-            <Button variant="outline" className="border-primary font-semibold">
+            <Button 
+              variant="outline" 
+              className="border-primary font-semibold"
+              onClick={() => navigate('/get-involved#volunteer')}
+            >
               Join Our Team
             </Button>
           </div>
@@ -67,7 +78,11 @@ const GetInvolved = () => {
             <p className="text-muted-foreground mb-6">
               Collaborate with us to create sustainable community solutions together.
             </p>
-            <Button variant="outline" className="border-primary font-semibold">
+            <Button 
+              variant="outline" 
+              className="border-primary font-semibold"
+              onClick={() => navigate('/get-involved#partner')}
+            >
               Become a Partner
             </Button>
           </div>
