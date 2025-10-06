@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ContactUs from "@/components/ContactUs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,17 +10,20 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Gift, Users, Handshake } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const GetInvolvedPage = () => {
   const { toast } = useToast();
   const [donationAmount, setDonationAmount] = useState("");
   const [customAmount, setCustomAmount] = useState("");
   const [frequency, setFrequency] = useState("one-time");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [volunteerForm, setVolunteerForm] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
+    interests: "",
   });
 
   const handleDonateSubmit = (e: React.FormEvent) => {
@@ -30,13 +34,40 @@ const GetInvolvedPage = () => {
     });
   };
 
-  const handleVolunteerSubmit = (e: React.FormEvent) => {
+  const handleVolunteerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for volunteering!",
-      description: "We'll be in touch with you soon.",
-    });
-    setVolunteerForm({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('volunteers')
+        .insert([
+          {
+            name: volunteerForm.name,
+            email: volunteerForm.email,
+            phone: volunteerForm.phone,
+            message: volunteerForm.message,
+            interests: volunteerForm.interests,
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Thank you for volunteering!",
+        description: "We'll be in touch with you soon.",
+      });
+      setVolunteerForm({ name: "", email: "", phone: "", message: "", interests: "" });
+    } catch (error) {
+      console.error('Error submitting volunteer form:', error);
+      toast({
+        title: "Error submitting form",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -237,8 +268,8 @@ const GetInvolvedPage = () => {
                         rows={4}
                       />
                     </div>
-                    <Button type="submit" className="w-full" size="lg">
-                      Submit
+                    <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                      {isSubmitting ? "Submitting..." : "Submit"}
                     </Button>
                   </form>
                 </CardContent>
@@ -327,6 +358,9 @@ const GetInvolvedPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Contact Us Section */}
+        <ContactUs />
       </main>
       <Footer />
     </div>

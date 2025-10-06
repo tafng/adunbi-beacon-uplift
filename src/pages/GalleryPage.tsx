@@ -18,6 +18,7 @@ import {
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -29,6 +30,7 @@ const GalleryPage = () => {
   const [filter, setFilter] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [storyForm, setStoryForm] = useState({
     name: "",
     email: "",
@@ -46,13 +48,37 @@ const GalleryPage = () => {
     { id: 5, src: gallery5, category: "community", description: "Community leader engagement" },
   ];
 
-  const handleStorySubmit = (e: React.FormEvent) => {
+  const handleStorySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Story submitted!",
-      description: "Thank you for sharing your story with us.",
-    });
-    setStoryForm({ name: "", email: "", story: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('stories')
+        .insert([
+          {
+            name: storyForm.name,
+            email: storyForm.email,
+            story: storyForm.story,
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Story submitted!",
+        description: "Thank you for sharing your story with us.",
+      });
+      setStoryForm({ name: "", email: "", story: "" });
+    } catch (error) {
+      console.error('Error submitting story:', error);
+      toast({
+        title: "Error submitting story",
+        description: "Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handlePrevImage = () => {
@@ -216,8 +242,9 @@ const GalleryPage = () => {
                 <Button
                   type="submit"
                   className="w-full bg-charcoal hover:bg-charcoal/90 text-white font-bold h-12 text-lg"
+                  disabled={isSubmitting}
                 >
-                  SHARE YOUR STORY
+                  {isSubmitting ? "SUBMITTING..." : "SHARE YOUR STORY"}
                 </Button>
               </form>
             </div>

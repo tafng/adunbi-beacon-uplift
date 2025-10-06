@@ -6,22 +6,48 @@ import { Heart, Users, Briefcase } from "lucide-react";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const GetInvolved = () => {
   const navigate = useNavigate();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [storyForm, setStoryForm] = useState({
     name: "",
     email: "",
     story: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for sharing!",
-      description: "Your story inspires us to continue our mission.",
-    });
-    setStoryForm({ name: "", email: "", story: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from('stories')
+        .insert([
+          {
+            name: storyForm.name,
+            email: storyForm.email,
+            story: storyForm.story,
+          }
+        ]);
+
+      if (error) throw error;
+
+      toast({
+        title: "Thank you for sharing!",
+        description: "Your story inspires us to continue our mission.",
+      });
+      setStoryForm({ name: "", email: "", story: "" });
+    } catch (error) {
+      console.error('Error submitting story:', error);
+      toast({
+        title: "Error submitting story",
+        description: "Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -137,8 +163,8 @@ const GetInvolved = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full font-semibold" size="lg">
-              Share Your Story
+            <Button type="submit" className="w-full font-semibold" size="lg" disabled={isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Share Your Story"}
             </Button>
           </form>
         </div>
