@@ -1,0 +1,23 @@
+---
+deployment:
+  tasks:
+    # IMPORTANT: Update the username 'yourusername' below to match your cPanel username
+    - export DEPLOYPATH=/home/yourusername/public_html/
+    
+    # Set Node.js version (adjust if needed)
+    - export NODEJS_VERSION=18
+    
+    # Activate Node.js environment (update path with your cPanel username)
+    - source /home/yourusername/nodevenv/public_html/18/bin/activate
+    
+    # Install dependencies
+    - npm install
+    
+    # Build the production bundle
+    - npm run build
+    
+    # Deploy built files to public directory
+    - /bin/cp -R dist/* $DEPLOYPATH
+    
+    # Copy .htaccess for proper routing (if needed)
+    - /bin/cp dist/.htaccess $DEPLOYPATH 2>/dev/null || :
